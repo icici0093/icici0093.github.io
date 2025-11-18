@@ -1,45 +1,197 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>이력서 - 김소이 (템플릿)</title>
 
-  <title>최인철 이력서</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <!-- Google font (한글 깔끔한 폰트) -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap" rel="stylesheet">
 
-  <!-- Favicons -->
-  <link href="/resources/assets/img/favicon.png" rel="icon">
-  <link href="/resources/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <style>
+    :root{
+      --accent:#222;
+      --muted:#6b6b6b;
+      --line:#e6e6e6;
+      --max-width:900px;
+      --pad:40px;
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family: "Noto Sans KR", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: #222;
+      background:#fff;
+      margin:0;
+      padding:30px;
+      display:flex;
+      justify-content:center;
+    }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    .resume {
+      width:100%;
+      max-width:var(--max-width);
+      padding:var(--pad);
+      border-radius:6px;
+      /* subtle card shadow */
+      box-shadow: 0 6px 18px rgba(20,20,20,0.04);
+    }
 
-  <!-- Vendor CSS Files -->
-  <link href="/resources/assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="/resources/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/resources/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="/resources/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="/resources/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="/resources/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    header{
+      display:flex;
+      align-items:flex-start;
+      gap:30px;
+      margin-bottom:18px;
+    }
+    .name-col{
+      flex:1;
+    }
+    .name{
+      font-size:40px;
+      font-weight:900;
+      margin:0 0 6px 0;
+      letter-spacing:-0.02em;
+    }
+    .contact{
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:12px;
+    }
 
-  <!-- Template Main CSS File -->
-  <link href="/resources/assets/css/style.css" rel="stylesheet">
+    .summary{
+      color:#333;
+      font-size:15px;
+      line-height:1.55;
+      margin:8px 0 0 0;
+    }
+
+    .skills {
+      margin-top:12px;
+      font-size:15px;
+      color:#333;
+    }
+    .skills ol{ padding-left:1.1em; margin:6px 0 0 0; }
+    .skills li{ margin:8px 0; }
+
+    hr.sep {
+      border:0;
+      border-top:1px solid var(--line);
+      margin:26px 0;
+    }
+
+    /* Experience */
+    .experience {
+      display:block;
+    }
+    .exp-item{
+      display:grid;
+      grid-template-columns: 1fr 180px;
+      gap:18px;
+      align-items:start;
+      padding:18px 0;
+      border-bottom:1px solid transparent;
+    }
+    .exp-item + .exp-item{
+      margin-top:6px;
+    }
+    .exp-left{
+      /* company & bullets */
+    }
+    .company{
+      font-weight:700;
+      font-size:18px;
+      margin:0 0 6px 0;
+    }
+    .role{
+      color:var(--muted);
+      font-size:14px;
+      margin:0 0 12px 0;
+    }
+    .exp-right{
+      text-align:right;
+      font-size:14px;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+
+    .bullets{ margin:8px 0 0 0; padding-left:18px; }
+    .bullets li{ margin:8px 0; line-height:1.6; color:#333; font-size:15px; }
+
+    /* layout tweaks for smaller screens */
+    @media (max-width:740px){
+      header{flex-direction:column; gap:8px}
+      .name{font-size:32px}
+      .exp-item{ grid-template-columns: 1fr; }
+      .exp-right{ text-align:left; margin-top:8px }
+    }
+  </style>
 </head>
-
 <body>
+  <main class="resume" role="main" aria-label="이력서">
+    <!-- Header: name, contact, summary, skills -->
+    <header>
+      <div class="name-col">
+        <h1 class="name">김소이</h1>
+        <div class="contact">
+          이메일: <a href="mailto:soi@wantedlab.com">soi@wantedlab.com</a><br>
+          연락처: +82 10-1234-5678
+        </div>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-    <div class="container d-flex flex-column align-items-center" data-aos="zoom-in" data-aos-delay="100">
-      <h1>최인철</h1>
-      <p>이메일 : <a href="mailto:icici0093@naver.com">icici0093@naver.com</a></p>
-      <p>연락처 : +82 10-8324-0271</p>
-    </div>
-  </section><!-- End Hero -->
+        <p class="summary">
+          - IT, 이커머스 분야에서 제품 기획 및 관리 (총 경력 5년 7개월)<br>
+          - 사업·기술·UX 분석을 바탕으로 제품을 기획하고 개선해 고객 확대/유지에 기여
+        </p>
 
+        <div class="skills">
+          <ol>
+            <li>Jira, Confluence, Zeplin 등의 협업 툴 활용 능력</li>
+            <li>SQL을 이용한 데이터 추출과 분석 가능</li>
+            <li>GA, Amplitude, Optimize를 활용한 데이터 트래킹 및 분석 경험</li>
+            <li>앱/웹 서비스 대응 능력</li>
+          </ol>
+        </div>
+      </div>
+    </header>
 
+    <hr class="sep">
+
+    <!-- Experience -->
+    <section class="experience" aria-label="경력">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:6px;">
+        <h2 style="margin:0; font-size:13px; color:var(--muted);">경력</h2>
+      </div>
+
+      <article class="exp-item" aria-label="원티드랩 경력">
+        <div class="exp-left">
+          <h3 class="company">원티드랩</h3>
+          <div class="role">PO팀 / 파트장</div>
+
+          <ul class="bullets">
+            <li>웹/앱 서비스 총괄로서 신규 서비스 다수 론칭 — 투표 서비스 배포로 신규 유저 5만 이상 확보, 사용률 24%p 개선 달성</li>
+            <li>사용자 스토리 기반의 제품 개선 — B2B 요금제 출시로 신규 고객 10% 유지</li>
+            <li>기존 서비스에 인공지능 분석 기술 도입해 전년 대비 매출 상승</li>
+          </ul>
+        </div>
+
+        <div class="exp-right">
+          2018.9 - 현재 재직중
+        </div>
+      </article>
+
+      <!-- 필요하면 아래에 추가 경력 항목을 복사해서 붙여넣으세요 -->
+      <!-- Example 추가 항목
+      <article class="exp-item">
+        <div class="exp-left">
+          <h3 class="company">이전회사 이름</h3>
+          <div class="role">직무 / 직급</div>
+          <ul class="bullets">
+            <li>주요 업무 및 성과 1</li>
+            <li>주요 업무 및 성과 2</li>
+          </ul>
+        </div>
+        <div class="exp-right">재직기간</div>
+      </article>
+      -->
+    </section>
+  </main>
 </body>
-
 </html>
